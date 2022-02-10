@@ -3,9 +3,9 @@ import { RouterModule, Routes } from "@angular/router";
 import { HomeComponent } from "./home.component";
 import { CommonModule } from '@angular/common';
 import { Store, StoreModule } from '@ngrx/store';
-import { userReducer } from "../Store/Reducers/home.reducer";
 import { EffectsModule } from "@ngrx/effects";
 import { HomeEffects } from "../Store/Effects/home.effects";
+import * as fromUsers from "../Store/Reducers/home.reducer"
 
 
 const homeRoutes: Routes = [
@@ -19,7 +19,7 @@ const homeRoutes: Routes = [
     imports: [
         RouterModule.forChild(homeRoutes),
         CommonModule,
-        StoreModule.forFeature('users', userReducer),
+        StoreModule.forFeature(fromUsers.USERS_FEATURE_KEY, fromUsers.userReducer),
         EffectsModule.forFeature([HomeEffects])
     ],
     exports: [RouterModule]

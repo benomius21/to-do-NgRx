@@ -1,15 +1,17 @@
 import { createFeatureSelector, createSelector } from '@ngrx/store';
 
 import {
-  userState,
+  UsersPartialState,
+  UserState,
 } from '../Reducers/home.reducer';
 
 export const getUserState = createFeatureSelector<
-  userState
+  UsersPartialState,
+  UserState
 >('users');
 
 export const selectUserUsers = createSelector(
    getUserState,
-  (state: userState) => state.users
+  (state: UserState) => state.users
 );
 

@@ -4,16 +4,16 @@ import { createEntityAdapter, EntityAdapter, EntityState } from '@ngrx/entity';
 import { User } from 'src/app/Models/Users';
 export const USERS_FEATURE_KEY = 'users';
 
-export interface userState {
+export interface UserState {
     userEmail: string,
     favoriteColor: string
     users: User[]
 }
 
-export interface usersPartialState {
-    readonly [USERS_FEATURE_KEY]: userState;
+export interface UsersPartialState {
+    readonly [USERS_FEATURE_KEY]: UserState;
 }
-export const initialState: userState = {
+export const initialState: UserState = {
     userEmail: '',
     favoriteColor: 'blue',
     users: []

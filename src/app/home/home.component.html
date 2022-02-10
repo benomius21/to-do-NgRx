@@ -1,8 +1,7 @@
 <ng-container
 *ngIf="{
   users: users$ | async
-} as vm"
-  
+} as vm"  
 >
   <button (click)="getUsers()">Click me</button>
     <div *ngFor="let test of vm.users" >
